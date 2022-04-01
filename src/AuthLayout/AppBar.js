@@ -100,12 +100,22 @@ export default function PrimarySearchAppBar(props) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleZingaMenuOpen = (event) => {
-    setAnchorZingaEl(event.currentTarget);
-    setIsZingaMenuOpen(true);
-  };
+  // const handleZingaMenuOpen = (event) => {
+  //   setAnchorZingaEl(event.currentTarget);
+  //   setIsZingaMenuOpen(true);
+  // };
 
-  const zingaMenuToggleHandler = (event) => {};
+  const zingaMenuToggleHandler = (event) => {
+    if (isZingaMenuOpen) {
+      console.log("hello");
+      setIsZingaMenuOpen(null);
+      setAnchorZingaEl(null);
+    } else {
+      console.log("hello2");
+      setAnchorZingaEl(event.currentTarget);
+      setIsZingaMenuOpen(true);
+    }
+  };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
